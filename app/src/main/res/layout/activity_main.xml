@@ -8,7 +8,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="97dp">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -41,10 +43,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="34dp"
-            android:layout_above="@+id/response"
+            android:layout_alignBottom="@+id/progressBar"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
             android:text="Response From Server"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -71,10 +72,25 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textView"
-            android:layout_alignLeft="@+id/send_request"
-            android:layout_alignStart="@+id/send_request"
+            android:layout_above="@+id/response"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="23dp"
             android:hint="Your Email"
+            android:inputType="textEmailAddress"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="55dp" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="32dp"
+            android:hint="Your Pass"
             android:inputType="textEmailAddress"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
@@ -84,10 +100,9 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/email"
-            android:layout_alignLeft="@+id/email"
-            android:layout_alignStart="@+id/email"
-            android:layout_marginBottom="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
             android:hint="Your Name"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"

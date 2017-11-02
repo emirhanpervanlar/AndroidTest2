@@ -15,13 +15,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView _name, _email, _response;
+    TextView _name, _email, _response,_pass;
     android.support.v7.widget.AppCompatButton _sendRequest;
     ProgressBar _proProgressBar;
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //Hooking the UI views for usage
         _name = (TextView) findViewById(R.id.name);
         _email = (TextView) findViewById(R.id.email);
+        _pass = (TextView) findViewById(R.id.pass);
         _response = (TextView) findViewById(R.id.response);
         _proProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         _sendRequest = (AppCompatButton) findViewById(R.id.send_request);
@@ -65,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
+                        params.put("token","a153dd6s33xv6uy9hgf23b16gh");
                         params.put("name", _name.getText().toString());
                         params.put("email", _email.getText().toString());
+                        params.put("pass", _pass.getText().toString());
+                        
                         return params;
                     }
                 };
